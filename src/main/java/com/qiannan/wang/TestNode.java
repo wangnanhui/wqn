@@ -12,11 +12,14 @@ public class TestNode {
 	public static void main(String[] args) {
 		
 		
-		Integer [] arr = {1,1,1,1,1,1,1,1,43,7,1,14,1,1,1,56,1,3,1,2,4,32,67,32,67,24,89,1,1,45};
+		Integer [] arr = {1,1,1,1,1,1,1,1,43,7,1,14,1,1,1,56,1,3,3,3,3,3,1,2,4,4,4,4,32,32,32,67,32,67,24,89,1,1,45};
 		TestNode t = new TestNode();
 		t.put(arr);
 		System.out.print("原始：");
 		t.print(t.root);
+		System.out.println();
+		System.out.print("去重：");
+		t.removeRepateElement();
 		System.out.println();
 		System.out.print("去除：");
 		t.delete(1);
@@ -25,6 +28,31 @@ public class TestNode {
 	}
 	
 
+	public void removeRepateElement() {
+		Node head = root ; 
+		Node cur = head ; 
+		while(cur.next != null) {
+			Node temp = cur.next; 
+			
+			if(temp.val == cur.val) {
+				cur.next = temp.next;
+				
+			}else {
+				cur = cur.next;
+			}
+		}
+		
+		print(head);
+		System.out.println();
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 	public Node delete(int delete) {
 
 		Node temp = root;

@@ -64,7 +64,7 @@ public class MyList<E> implements List<E> {
 		
 		
 		
-		
+		size++;
 		
 		return false;
 	}
